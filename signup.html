@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - ABS Project Manager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-side">
+            <div class="side-content">
+                <h2>Join Thousands of Teams</h2>
+                <p>Experience the power of organized project management with our advanced ABS-based system.</p>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <span class="feature-icon"><img src="icon/Project Tracking.png" alt="Project Tracking" width="35" height="35"></span>
+                        <span>Track unlimited projects</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon"><img src="icon/Simple & Intuitive.png" alt="Team Collaboration" width="35" height="35"></span>
+                        <span>Collaborate with your team</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon"><img src="icon/Deadline Alerts.png" alt="Deadline Alerts" width="35" height="35"></span>
+                        <span>Never miss a deadline</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="auth-card">
+            <div class="auth-header">
+                <h1>Create Account</h1>
+                <p>Start managing your projects efficiently</p>
+            </div>
+            
+            <form class="auth-form" id="signup-form">
+                <div class="form-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="John Doe" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Create a password" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+                </div>
+                
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="terms" required>
+                        <span>I agree to the <a href="#" class="link">Terms & Conditions</a></span>
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn-submit">Create Account</button>
+            </form>
+            
+            <div class="auth-footer">
+                <p>Already have an account? <a href="signin.html" class="link">Sign in</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

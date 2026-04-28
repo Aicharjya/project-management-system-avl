@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - ABS Project Manager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-side">
+            <div class="side-content">
+                <h2>Manage Projects with Precision</h2>
+                <p>Streamline your workflow with intelligent project management powered by ABS tree optimization.</p>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <span class="feature-icon"><img src="icon/Lightning Fast.png" alt="Lightning Fast" width="35" height="35"></span>
+                        <span>Lightning fast performance</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon"><img src="icon/Simple & Intuitive.png" alt="Simple & Intuitive" width="35" height="35"></span>
+                        <span>Simple & intuitive interface</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon"><img src="icon/Real-time Updates.png" alt="Real-time Updates" width="35" height="35"></span>
+                        <span>Real-time collaboration</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="auth-card">
+            <div class="auth-header">
+                <h1>Welcome Back</h1>
+                <p>Sign in to your ABS Project Manager account</p>
+            </div>
+            
+            <form class="auth-form" id="signin-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="remember" id="remember">
+                        <span>Remember me</span>
+                    </label>
+                    <a href="#" class="link">Forgot password?</a>
+                </div>
+                
+                <button type="submit" class="btn-submit">Sign In</button>
+            </form>
+            
+            <div class="auth-footer">
+                <p>Don't have an account? <a href="signup.html" class="link">Sign up</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

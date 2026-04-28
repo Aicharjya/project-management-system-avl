@@ -1,0 +1,473 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    line-height: 1.6;
+    color: #000000;
+    background-color: #F1F1F1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+.navbar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #e0e0e0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 20px;
+}
+
+.nav-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #000000;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #21209C;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.nav-links a.btn-primary {
+    color: white !important;
+}
+
+.nav-links a:hover {
+    color: #000000;
+}
+
+/* Buttons */
+.btn-primary,
+.btn-cta {
+    background: #21209C;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover,
+.btn-cta:hover {
+    background: #FDB827;
+    color: #000000;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(253, 184, 39, 0.3);
+}
+
+.btn-cta {
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+}
+
+/* Hero Section */
+.hero {
+    padding: 8rem 0 6rem;
+    text-align: center;
+    background: linear-gradient(135deg, #ffffff 0%, #F1F1F1 100%);
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.accent {
+    color: #21209C;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    color: #21209C;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Features Section */
+.features {
+    padding: 6rem 0;
+    background: white;
+}
+
+.features h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 4rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(33, 32, 156, 0.15);
+    border: 1px solid #21209C;
+    transition: all 0.3s;
+    text-align: center;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(33, 32, 156, 0.2);
+    border-color: #FDB827;
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 1rem;
+}
+
+.feature-card p {
+    color: #21209C;
+    line-height: 1.6;
+}
+
+/* Dashboard Preview */
+.dashboard-preview {
+    padding: 6rem 0;
+    background: #F1F1F1;
+}
+
+.dashboard-preview h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 1rem;
+}
+
+.dashboard-preview>.container>p {
+    text-align: center;
+    font-size: 1.25rem;
+    color: #21209C;
+    margin-bottom: 4rem;
+}
+
+.preview-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.preview-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.preview-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(33, 32, 156, 0.15);
+    border: 1px solid #21209C;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.card-header h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #21209C;
+}
+
+.card-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #000000;
+}
+
+.card-badge {
+    background: #21209C;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 25px;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.card-progress {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.progress-bar {
+    background: #F1F1F1;
+    height: 8px;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    background: #FDB827;
+    height: 100%;
+    border-radius: 25px;
+    transition: width 0.3s;
+}
+
+.card-progress span {
+    font-size: 0.875rem;
+    color: #21209C;
+}
+
+.card-avatars {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    background: #21209C;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.avatar-more {
+    width: 32px;
+    height: 32px;
+    background: #F1F1F1;
+    color: #21209C;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.list-item {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #F1F1F1;
+    font-size: 0.875rem;
+    color: #21209C;
+}
+
+.list-item:last-child {
+    border-bottom: none;
+}
+
+/* Why Us Section */
+.why-us {
+    padding: 6rem 0;
+    background: white;
+}
+
+.why-us h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 4rem;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.benefit-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(33, 32, 156, 0.15);
+    border: 1px solid #21209C;
+    transition: all 0.3s;
+    text-align: center;
+}
+
+.benefit-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(33, 32, 156, 0.2);
+    border-color: #FDB827;
+}
+
+.benefit-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.benefit-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 1rem;
+}
+
+.benefit-card p {
+    color: #21209C;
+    line-height: 1.6;
+}
+
+/* Footer */
+.footer {
+    background: #000000;
+    color: white;
+    padding: 3rem 0 1rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.footer-brand h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.footer-brand p {
+    color: #999999;
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-links a {
+    color: #999999;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #21209C;
+    color: #999999;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .nav-links a:not(.btn-primary) {
+        display: none;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    .features h2,
+    .dashboard-preview h2,
+    .why-us h2 {
+        font-size: 2rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .hero {
+        padding: 6rem 0 4rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .features,
+    .dashboard-preview,
+    .why-us {
+        padding: 4rem 0;
+    }
+
+    .feature-card,
+    .benefit-card {
+        padding: 1.5rem;
+    }
+}

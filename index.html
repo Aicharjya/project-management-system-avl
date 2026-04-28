@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ABS Project Manager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header class="navbar" role="banner">
+        <div class="container">
+            <div class="logo">ABS Project Manager</div>
+            <nav role="navigation">
+                <button class="nav-button active" data-target="dashboard" aria-current="page">Dashboard</button>
+                <button class="nav-button" data-target="view-tree">View Tree</button>
+                <button class="nav-button" data-target="sorted-list">Sorted List</button>
+            </nav>
+            <div class="profile-container">
+                <div class="profile-icon" role="button" aria-label="Open user profile menu" tabindex="0">
+                    <i class="fa-solid fa-user" aria-hidden="true"></i>
+                </div>
+                <div class="profile-popup hidden" role="menu">
+                    <div class="profile-header">
+                        <div class="profile-avatar">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div class="profile-info">
+                            <div class="profile-username">John Doe</div>
+                            <div class="profile-email">john.doe@example.com</div>
+                        </div>
+                    </div>
+                    <div class="profile-divider"></div>
+                    <div class="profile-actions">
+                        <button class="profile-btn" role="menuitem">
+                            <i class="fa-solid fa-user"></i>
+                            <span>Profile</span>
+                        </button>
+                        <button class="profile-btn" role="menuitem">
+                            <i class="fa-solid fa-gear"></i>
+                            <span>Settings</span>
+                        </button>
+                        <button class="profile-btn logout-btn" role="menuitem">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            <span>Logout</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container content">
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="page-section active" role="tabpanel">
+            <div class="dashboard-grid">
+                <div class="summary-cards">
+                    <div class="card total">
+                        <h3>Total Projects: <span id="total-projects">0</span></h3>
+                    </div>
+                    <div class="card completed">
+                        <h3>Completed: <span id="completed-projects">0</span></h3>
+                    </div>
+                    <div class="card pending">
+                        <h3>Pending: <span id="pending-projects">0</span></h3>
+                    </div>
+                </div>
+
+                <div class="recent-projects panel">
+                    <h2>Recent Projects</h2>
+                    <div class="table-container" aria-live="polite">
+                        <table class="project-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">S.No</th>
+                                    <th scope="col">Project Name</th>
+                                    <th scope="col">Start Date</th>
+                                    <th scope="col">Priority</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="dashboard-project-list">
+                                <!-- Projects will be loaded here by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="add-project-panel panel">
+                    <h2>Add New Project</h2>
+                    <form id="add-project-form">
+                        <div class="form-group">
+                            <label for="project-name">Project Name</label>
+                            <input type="text" id="project-name" name="name" required
+                                autocomplete="organization-title" />
+                        </div>
+                        <div class="form-group">
+                            <label for="project-description">Description</label>
+                            <textarea id="project-description" name="description"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="project-start-date">Start Date</label>
+                            <input type="date" id="project-start-date" name="start_date" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="project-priority">Priority</label>
+                            <select id="project-priority" name="priority">
+                                <option value="High">High</option>
+                                <option value="Medium" selected>Medium</option>
+                                <option value="Low">Low</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="project-status">Status</label>
+                            <select id="project-status" name="status">
+                                <option value="Not Started" selected>Not Started</option>
+                                <option value="In Progress">In Progress</option>
+                                <option value="Completed">Completed</option>
+                                <option value="On Hold">On Hold</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn primary">Add Project</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- View Tree Section -->
+        <section id="view-tree" class="page-section" role="tabpanel">
+            <div class="controls-panel">
+                <h2>Project Tree Visualization</h2>
+
+                <div class="controls-row">
+                    <div class="sort-group">
+                        <label for="tree-sort-by">Sort By</label>
+                        <select id="tree-sort-by">
+                            <option value="start_date">Start Date</option>
+                            <option value="priority">Priority</option>
+                            <option value="name">Project Name</option>
+                        </select>
+
+                        <label class="switch" aria-label="Toggle sort order">
+                            <input type="checkbox" id="tree-sort-order">
+                            <span class="slider"></span>
+                        </label>
+
+
+                        <span class="sort-label" id="tree-sort-label">Ascending</span>
+                    </div>
+
+                    <div class="search-group">
+                        <input type="text" id="search-tree-input" placeholder="Search projects">
+                        <button class="btn">Search</button>
+                    </div>
+
+                    <button class="btn" id="refresh-tree">Refresh</button>
+                </div>
+            </div>
+
+            <div id="avl-tree-display" class="panel tree-display" aria-live="polite">
+                <p>Tree visualization will appear here.</p>
+            </div>
+        </section>
+
+        <!-- Sorted List Section -->
+        <section id="sorted-list" class="page-section" role="tabpanel">
+            <div class="controls-panel">
+                <h2>All Projects</h2>
+
+                <div class="controls-row">
+                    <div class="sort-group">
+                        <label for="list-sort-by">Sort By</label>
+                        <select id="list-sort-by">
+                            <option value="start_date">Start Date</option>
+                            <option value="priority">Priority</option>
+                            <option value="name">Project Name</option>
+                        </select>
+
+                        <label class="switch" aria-label="Toggle sort order">
+                            <input type="checkbox" id="list-sort-order" checked>
+                            <span class="slider"></span>
+                        </label>
+
+                        <span class="sort-label" id="list-sort-label">Ascending</span>
+                    </div>
+
+                    <div class="search-group">
+                        <input type="text" id="list-search-input" placeholder="Search projects">
+                        <button class="btn">Search</button>
+                    </div>
+
+                    <button class="btn" id="refresh-list">Refresh</button>
+
+                </div>
+            </div>
+            <div class="project-list-table panel">
+                <div class="table-container" aria-live="polite">
+                    <table class="project-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">S.No</th>
+                                <th scope="col">Project Name</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Start Date</th>
+                                <th scope="col">Priority</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="all-project-list">
+                            <!-- Projects will be loaded and sorted here by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js" defer></script>
+    <!-- You can include a tree visualization library (D3, vis.js, etc.) later if you want a graphical display -->
+</body>
+
+</html>
